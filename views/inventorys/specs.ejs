@@ -1,0 +1,39 @@
+<%- include('../partials/header'); -%>
+
+<div class="container" style="padding-top: 2%;">  
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead"><strong>S2S</strong></p>
+            <div class="list-group">
+                <li class="list-group-item" style="background-color: rgba(0, 0, 0, 0.3);">
+                    <a href="/inventorys/<%= inventory._id%>" class="btn" style="color: white;"><%= inventory.name%>'s Detail</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/inventorys/<%= inventory._id%>/specs" class="btn">Specifications</a>
+                </li>
+                <li class="list-group-item" style="background-color: rgba(0, 0, 0, 0.3);">
+                    <a href="/users/<%= inventory.author.id%>" class="btn" style="color: white;">Seller's Profile</a>
+                </li>
+            </div>
+        </div>
+        <div class="col-md-9" style="padding-top: 4%;">
+            <div class="img-thumbnail" style="background-color: rgba(0, 0, 0, 0.3); border: none;">
+                    <h4 style="padding-top: 4%; padding-left: 30%;" class="float-left">
+                        <a href="" style="color: white;"><%= inventory.name%>'s Specification: </a>
+                    </h4>
+
+                    <div style= "font-size: large; padding-top: 2%; padding-right: 2%; padding-left: 2%; white-space: pre-wrap" >
+                        
+                        <%= inventory.specifications %>
+
+                    </div>
+            </div>        
+        </div>
+    </div>
+</div> 
+
+<div style="padding-left: 26%; padding-top: 2%; padding-bottom: 2%;">
+    <a class="btn btn-dark" href="/inventorys/<%= inventory._id%>">Go Back</a>
+</div>
+
+<%- include('../partials/footer'); -%>

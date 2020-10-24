@@ -1,0 +1,32 @@
+<%- include('../partials/header'); -%>
+
+<div class="container">
+        <h1 style="text-align: center; padding-top: 50px;">Edit <%= inventory.name%></h1>
+        <div style="width: 30%; margin: 0 auto;">
+            <form action="/inventorys/<%= inventory._id%>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="inventory[name]" value="<%=inventory.name%>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="inventory[description]" value="<%=inventory.description   %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="inventory[specifications]" value="<%=inventory.specifications%>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="inventory[yop]" value="<%=inventory.yop%>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="inventory[price]" value="<%=inventory.price%>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                </div>    
+            </form>
+
+            <a href="/inventorys">Go Back</a>
+        </div>
+</div>
+
+
+<%- include('../partials/footer'); -%>
